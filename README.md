@@ -15,8 +15,8 @@ public class MyClass: NSObject {
 * Add a class with a generic type
 
 ```swift
-public class MyGenericClass<ClassType where ClassType: MyClass>: NSObject {
-    public var objectArray: [ClassType] = []
+class MyGenericClass<ClassType where ClassType: MyClass>: NSObject {
+    var objectArray: [ClassType] = []
     
     init(objectArray: [ClassType]) {
         self.objectArray = objectArray
@@ -29,10 +29,9 @@ public class MyGenericClass<ClassType where ClassType: MyClass>: NSObject {
 * Compile again. **Compiler gets angry with the following problem ✕:**
 
 ```
-<module-includes>:2:9: note: in file included from <module-includes>:2:
 #import "Headers/TestFramework-Swift.h"
         ^
-/Users/sth/Library/Developer/Xcode/DerivedData/GenericBug-gffjukpgfwqybwdgfdopezrkfxdd/Build/Products/Debug-iphonesimulator/TestFramework.framework/Headers/TestFramework-Swift.h:104:52: error: expected a type
+[...]/TestFramework.framework/Headers/TestFramework-Swift.h:104:52: error: expected a type
 @property (nonatomic, copy) NSArray</* ClassType */> * __nonnull objectArray;
                                                    ^
 <unknown>:0: error: could not build Objective-C module 'TestFramework'

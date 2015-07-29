@@ -1,7 +1,7 @@
 # A Bug in Exporting Swift Classes With Generics to Objective-C
 
-1. Add a Dynamic Framework. 
-2. Add a class:
+* Add a Dynamic Framework. 
+* Add a class:
 
 ```swift
 public class MyClass: NSObject {
@@ -12,7 +12,7 @@ public class MyClass: NSObject {
 }
 ```
 
-3. Add a class with a generic type
+* Add a class with a generic type
 
 ```swift
 public class MyGenericClass<ClassType where ClassType: MyClass>: NSObject {
@@ -24,9 +24,9 @@ public class MyGenericClass<ClassType where ClassType: MyClass>: NSObject {
 }
 ```
 
-4. Compile. **Compiles with no problem ✓** 
-5. Make the classes public and try to use them in the main target.
-6. Compile. **Compiler gets angry with the following problem ✕:**
+* Compile. **Compiles with no problem ✓** 
+* Make the classes public and try to use them in the main target.
+* Compile again. **Compiler gets angry with the following problem ✕:**
 
 ```
 <module-includes>:2:9: note: in file included from <module-includes>:2:
